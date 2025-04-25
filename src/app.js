@@ -29,7 +29,12 @@ async function game() {
     const guess = await askQuestion(promptConfig.message);
     const guessNum = +guess;
 
-    checkIsValidUserInput(guess);
+    if (!checkIsValidUserInput(guess)) {
+      console.log(
+        'Invalid input!',
+      );
+      continue;
+    }
 
     const { bulls, cows } = getBullsAndCows(guess, number);
 

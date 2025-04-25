@@ -10,14 +10,11 @@
  * @return {boolean} - True if the user input is valid, false otherwise
  */
 function checkIsValidUserInput(userInput) {
-  if (userInput.split('')[0] === '0') {
+  if (/^\d{4}$/.test(userInput) === false || userInput[0] === '0') {
     return false;
   }
 
-  if (/^\d{4}$/.test(userInput) === false) {
-    return false;
-  }
-
+  // Проверка на уникальность цифр
   const digits = new Set(userInput);
 
   if (digits.size !== 4) {
