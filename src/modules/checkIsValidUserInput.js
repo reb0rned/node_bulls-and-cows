@@ -1,4 +1,5 @@
 'use strict';
+/* eslint-disable no-console */
 
 /**
  * Checks that the user input is valid.
@@ -9,7 +10,21 @@
  * @return {boolean} - True if the user input is valid, false otherwise
  */
 function checkIsValidUserInput(userInput) {
-  /* Write your code here */
+  if (userInput.split('')[0] === '0') {
+    return false;
+  }
+
+  if (/^\d{4}$/.test(userInput) === false) {
+    return false;
+  }
+
+  const digits = new Set(userInput);
+
+  if (digits.size !== 4) {
+    return false;
+  }
+
+  return true;
 }
 
 module.exports = {
