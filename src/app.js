@@ -30,9 +30,7 @@ async function game() {
     const guessNum = +guess;
 
     if (!checkIsValidUserInput(guess)) {
-      console.log(
-        'Invalid input!',
-      );
+      console.log('Invalid input!');
       continue;
     }
 
