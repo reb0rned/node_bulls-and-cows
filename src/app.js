@@ -30,8 +30,10 @@ async function game() {
     const guessNum = +guess;
 
     checkIsValidUserInput(guess);
-    const {bulls, cows} = getBullsAndCows(guess, number);
-    console.log(`Bulls: ${bulls} Cows: ${cows}`)
+
+    const { bulls, cows } = getBullsAndCows(guess, number);
+
+    console.log(`Bulls: ${bulls} Cows: ${cows}`);
 
     if (number === guessNum) {
       console.log('Good job :) You guessed the number!');
